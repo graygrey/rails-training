@@ -41,3 +41,6 @@ gem 'spring',        group: :development
 gem 'slim'
 
 gem 'rspec-rails'
+
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bcrypt-ruby'

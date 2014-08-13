@@ -1,0 +1,21 @@
+doctype html
+html
+	head
+	  title RailsTraining
+	  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+		= javascript_include_tag 'application', 'data-turbolinks-track' => true
+		= csrf_meta_tags
+
+	body
+	  .blog-masthead
+	  	.container
+	  		nav.blog-nav
+	  			a class="blog-nav-item active" href="http://localhost:3000/articles" Home
+	  			a class="blog-nav-item" href="http://localhost:3000/articles" Bloggers
+	  			-if current_user.nil?
+	  				a class="blog-nav-item" href="http://localhost:3000/signin" Login
+	  			-else
+	  				a class="blog-nav-item" href="http://localhost:3000/signout" Signout
+
+	=  yield
+

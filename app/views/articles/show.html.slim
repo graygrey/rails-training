@@ -1,0 +1,13 @@
+.container
+	.title
+		= @article.title
+	.article-text-big
+		= @article.text
+	h3 Comments
+	= render @article.comments
+	h3 Add a Comment
+	= render "comments/form"
+	= link_to "Back", articles_path
+	= link_to "Edit", edit_article_path(@article)
+
+

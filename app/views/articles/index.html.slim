@@ -1,0 +1,28 @@
+div class="container-fluid"
+	div class="lead blog-header"
+		p class="blog-title title" Our Blog
+		p class="blog-description" the second blog written by Yeming Wang & Christy Liu
+		= link_to "new",new_article_path, :method =>"get", class:"my-btn btn btn-primary"
+	div class="col-md-8 blog-main"
+	  - @articles.each do |article|
+	    h2 class="article-title"
+	      = article.title
+	    p class="article-text"
+	      = article.text
+	    p class="curd"
+	      = link_to 'Show', article_path(article)
+	      = link_to 'Edit', edit_article_path(article)
+	      = link_to 'Destroy', article_path(article),          \
+	        method: :delete, data: { confirm: 'Are you sure?'}
+	div class="col-md-3 sidebar"
+	  div class="sidebar-about"
+	    h4 About
+	    p This is the very first blog written by Christy Liu. And I am very glad to share it to all of you
+	  div class="tag"
+	    = link_to "tag2",articles_path
+	    br
+	      = link_to "tag1",articles_path
+	      br
+	        = link_to "tag2",articles_path
+	        br
+	          = link_to "tag1",articles_path
